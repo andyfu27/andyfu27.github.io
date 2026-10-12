@@ -10,10 +10,10 @@ intro: >-
   My work spans ROS 2 robotics and computer vision, RF wireless power, deep learning for
   medical imaging, and embedded electronics for Formula SAE.
 location: St. Louis, MO
-
 email: andy.f@wustl.edu
-github: ""          # your GitHub username, e.g. "andyfu"
-linkedin: ""        # full URL, e.g. "https://www.linkedin.com/in/your-name"
+email2: fusiming2022@gmail.com
+github: "andyfu27"
+linkedin: "https://www.linkedin.com/in/siming-fu-4b6830309"
 resume: /assets/resume.pdf
 
 # Optional: a photo of you for the right side of the home page (e.g. /assets/img/me.jpg).
