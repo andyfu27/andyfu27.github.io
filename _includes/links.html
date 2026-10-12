@@ -1,6 +1,7 @@
 {% assign p = site.data.profile %}
 <ul class="link-row">
   {% if p.email != "" %}<li><a href="mailto:{{ p.email }}">{{ p.email }}</a></li>{% endif %}
+  {% if p.email2 and p.email2 != "" %}<li><a href="mailto:{{ p.email2 }}">{{ p.email2 }}</a></li>{% endif %}
   {% if p.github != "" %}<li><a href="https://github.com/{{ p.github }}" target="_blank" rel="noopener">GitHub</a></li>{% endif %}
   {% if p.linkedin != "" %}<li><a href="{{ p.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>{% endif %}
   {% if p.resume != "" %}<li><a href="{{ p.resume | relative_url }}" target="_blank" rel="noopener">Resume (PDF)</a></li>{% endif %}
