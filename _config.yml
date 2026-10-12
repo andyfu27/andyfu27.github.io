@@ -8,7 +8,7 @@ description: Electrical engineering student at WashU building robotics, embedded
 # After you create the repo, set these:
 #   - Repo named USERNAME.github.io  ->  url: "https://USERNAME.github.io", baseurl: ""
 #   - Any other repo name (e.g. "portfolio") -> url: "https://USERNAME.github.io", baseurl: "/portfolio"
-url: ""
+url: "https://andyfu27.github.io"
 baseurl: ""
 
 # Every file in _projects/ becomes a page at /projects/<file-name>/
