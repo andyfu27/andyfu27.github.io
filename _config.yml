@@ -1,0 +1,39 @@
+# ------------------------------------------------------------------
+# Site settings
+# Your name, links and bio live in _data/profile.yml, not here.
+# ------------------------------------------------------------------
+title: Siming (Andy) Fu
+description: Electrical engineering student at WashU building robotics, embedded and RF systems.
+
+# After you create the repo, set these:
+#   - Repo named USERNAME.github.io  ->  url: "https://USERNAME.github.io", baseurl: ""
+#   - Any other repo name (e.g. "portfolio") -> url: "https://USERNAME.github.io", baseurl: "/portfolio"
+url: ""
+baseurl: ""
+
+# Every file in _projects/ becomes a page at /projects/<file-name>/
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+
+exclude:
+  - README.md
+  - PROJECT_TEMPLATE.md
+  - Gemfile
+  - Gemfile.lock
+  - tools/
+  - node_modules/
+  - vendor/

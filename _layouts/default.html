@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+{% include head.html %}
+<body>
+<a class="skip" href="#main">Skip to content</a>
+{% include header.html %}
+<main id="main">
+{{ content }}
+</main>
+{% include footer.html %}
+<dialog class="lightbox" aria-label="Image viewer"><button class="lightbox-close" aria-label="Close">×</button><img alt=""><p class="lightbox-caption"></p></dialog>
+<script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</body>
+</html>

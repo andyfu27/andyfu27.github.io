@@ -1,0 +1,10 @@
+{% assign p = site.data.profile %}
+<footer class="site-footer" id="contact">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-name">{{ p.name }}</p>
+      <p class="muted">{{ p.headline }}{% if p.location != "" %} · {{ p.location }}{% endif %}</p>
+    </div>
+    {% include links.html %}
+  </div>
+</footer>

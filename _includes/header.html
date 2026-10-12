@@ -1,0 +1,11 @@
+{% assign p = site.data.profile %}
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">{{ p.short_name }}</a>
+    <nav class="nav" aria-label="Main">
+      <a href="{{ '/#projects' | relative_url }}">Projects</a>
+      <a href="{{ '/#experience' | relative_url }}">Experience</a>
+      {% if p.resume != "" %}<a href="{{ p.resume | relative_url }}" target="_blank" rel="noopener">Resume</a>{% endif %}
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="970" height="520" viewBox="0 0 970 520" role="img" aria-labelledby="t d">
+<title id="t">Control board block diagram</title>
+<desc id="d">Driver controls and sensors pass through signal conditioning into a 5 V-referenced ADC and the microcontroller. The microcontroller drives shift actuators through a smart low-side switch, sends 5 V outputs through optocouplers, and talks to the car over CAN. Power comes from 12 V through a reverse-polarity diode, a 5 V regulator and a fuse.</desc>
+<style>
+  .bg{fill:#ffffff}
+  .box{fill:#ffffff;stroke:#d9d4cb;stroke-width:1.2}
+  .hl{fill:#e4e4e4;stroke:#0e0e0e;stroke-width:1.4}
+  .pw{fill:#f3f1ed;stroke:#d9d4cb;stroke-width:1.2}
+  text{font-family:"Inter Tight","Helvetica Neue",Helvetica,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;fill:#1c1b19}
+  .t{font-size:13.5px;font-weight:600}
+  .s{font-size:12px;fill:#6b675f}
+  .g{font-size:11px;letter-spacing:.08em;fill:#0e0e0e;font-weight:600}
+  .w{stroke:#8a857c;stroke-width:1.4;fill:none}
+  .a{fill:#8a857c}
+  @media (prefers-color-scheme: dark){
+    .bg{fill:#1b1a19}
+    .box{fill:#232220;stroke:#3a3835}
+    .hl{fill:#2a2a2a;stroke:#ececec}
+    .pw{fill:#1f1e1c;stroke:#3a3835}
+    text{fill:#ecebe8}
+    .s{fill:#a19d95}
+    .g{fill:#ececec}
+    .w{stroke:#8f8a82}
+    .a{fill:#8f8a82}
+  }
+</style>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="a" d="M0 0L10 5L0 10z"/></marker></defs>
+<rect class="bg" width="970" height="520" rx="14"/>
+
+<!-- column labels -->
+<text class="g" x="20" y="36">DRIVER CONTROLS</text>
+<text class="g" x="20" y="218">SENSORS</text>
+<text class="g" x="280" y="36">CONDITIONING</text>
+<text class="g" x="540" y="36">PROCESSING</text>
+<text class="g" x="780" y="36">OUTPUTS</text>
+
+<!-- inputs -->
+<rect class="box" x="20" y="50" width="200" height="44" rx="9"/><text class="t" x="120" y="77" text-anchor="middle">Up / downshift paddles</text>
+<rect class="box" x="20" y="130" width="200" height="44" rx="9"/><text class="t" x="120" y="157" text-anchor="middle">Clutch paddles (L / R)</text>
+<rect class="box" x="20" y="230" width="200" height="44" rx="9"/><text class="t" x="120" y="257" text-anchor="middle">Gear &amp; clutch position</text>
+<rect class="box" x="20" y="300" width="200" height="44" rx="9"/><text class="t" x="120" y="327" text-anchor="middle">Spare analog &amp; digital</text>
+
+<!-- conditioning -->
+<rect class="box" x="280" y="50" width="200" height="44" rx="9"/><text class="t" x="380" y="69" text-anchor="middle">10 kΩ pull-ups</text><text class="s" x="380" y="85" text-anchor="middle">+ RC noise filter</text>
+<rect class="box" x="280" y="126" width="200" height="52" rx="9"/><text class="t" x="380" y="146" text-anchor="middle">5 V → 3.3 V divider + RC</text><text class="s" x="380" y="164" text-anchor="middle">MCP6002 unity-gain buffer</text>
+<rect class="box" x="280" y="230" width="200" height="114" rx="9"/><text class="t" x="380" y="282" text-anchor="middle">RC low-pass filter</text><text class="s" x="380" y="299" text-anchor="middle">on every analog input</text>
+
+<!-- processing -->
+<rect class="hl" x="540" y="50" width="180" height="130" rx="11"/><text class="t" x="630" y="104" text-anchor="middle">Microcontroller</text><text class="s" x="630" y="122" text-anchor="middle">Feather-format, CAN</text><text class="s" x="630" y="138" text-anchor="middle">3.3 V logic</text>
+<rect class="box" x="540" y="240" width="180" height="70" rx="9"/><text class="t" x="630" y="268" text-anchor="middle">TLV2553 ADC</text><text class="s" x="630" y="286" text-anchor="middle">12-bit · 11 ch · 5 V ref</text>
+<path class="w" d="M630 240V182" marker-end="url(#ar)"/><text class="s" x="638" y="216">SPI</text>
+
+<!-- outputs -->
+<rect class="box" x="780" y="50" width="170" height="54" rx="9"/><text class="t" x="865" y="73" text-anchor="middle">BTS3410G</text><text class="s" x="865" y="90" text-anchor="middle">smart low-side switch</text>
+<text class="s" x="865" y="124" text-anchor="middle">→ up / downshift actuators</text>
+<rect class="box" x="780" y="146" width="170" height="54" rx="9"/><text class="t" x="865" y="169" text-anchor="middle">LTV-847 optocouplers</text><text class="s" x="865" y="186" text-anchor="middle">3.3 V → 5 V outputs</text>
+<text class="s" x="865" y="220" text-anchor="middle">brake light · clutch servo</text><text class="s" x="865" y="236" text-anchor="middle">ECU signal · digital out</text>
+<rect class="box" x="780" y="270" width="170" height="54" rx="9"/><text class="t" x="865" y="293" text-anchor="middle">CAN bus</text><text class="s" x="865" y="310" text-anchor="middle">to vehicle network</text>
+
+<!-- wires -->
+<path class="w" d="M220 72H278" marker-end="url(#ar)"/>
+<path class="w" d="M220 152H278" marker-end="url(#ar)"/>
+<path class="w" d="M220 252H278" marker-end="url(#ar)"/>
+<path class="w" d="M220 322H278" marker-end="url(#ar)"/>
+<path class="w" d="M480 72H538" marker-end="url(#ar)"/>
+<path class="w" d="M480 152H538" marker-end="url(#ar)"/>
+<path class="w" d="M480 275H538" marker-end="url(#ar)"/>
+<path class="w" d="M720 77H778" marker-end="url(#ar)"/>
+<path class="w" d="M720 160H750V173H778" marker-end="url(#ar)"/>
+<path class="w" d="M722 170H738V297H778" marker-start="url(#ar)" marker-end="url(#ar)"/>
+
+<!-- power -->
+<text class="g" x="20" y="392">POWER</text>
+<rect class="pw" x="20" y="404" width="160" height="50" rx="9"/><text class="t" x="100" y="426" text-anchor="middle">+12 V</text><text class="s" x="100" y="442" text-anchor="middle">vehicle supply</text>
+<rect class="pw" x="213" y="404" width="160" height="50" rx="9"/><text class="t" x="293" y="426" text-anchor="middle">1N4004 diode</text><text class="s" x="293" y="442" text-anchor="middle">reverse-polarity guard</text>
+<rect class="pw" x="406" y="404" width="160" height="50" rx="9"/><text class="t" x="486" y="426" text-anchor="middle">MC78M05</text><text class="s" x="486" y="442" text-anchor="middle">5 V linear regulator</text>
+<rect class="pw" x="599" y="404" width="160" height="50" rx="9"/><text class="t" x="679" y="426" text-anchor="middle">250 mA fuse</text><text class="s" x="679" y="442" text-anchor="middle">on the 5 V output</text>
+<rect class="pw" x="792" y="404" width="158" height="50" rx="9"/><text class="t" x="871" y="426" text-anchor="middle">+5 V rail</text><text class="s" x="871" y="442" text-anchor="middle">MCU, ADC, sensors</text>
+<path class="w" d="M180 429H211" marker-end="url(#ar)"/>
+<path class="w" d="M373 429H404" marker-end="url(#ar)"/>
+<path class="w" d="M566 429H597" marker-end="url(#ar)"/>
+<path class="w" d="M759 429H790" marker-end="url(#ar)"/>
+
+<text class="s" x="20" y="494">Every signal enters and leaves through one 26-pin sealed automotive connector (J1).</text>
+</svg>

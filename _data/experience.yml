@@ -1,0 +1,36 @@
+# Shown in the "Experience" section on the home page, top to bottom.
+- role: Robotics Software Engineering Intern
+  org: Innovation AI
+  where: San Jose, CA / Remote
+  period: Jun 2026 – Present
+  note: ROS 2 person-tracking with YOLO + OpenCV, closed-loop gimbal and mobile-base control.
+
+- role: Research Assistant
+  org: AXIS Lab, Washington University in St. Louis
+  where: St. Louis, MO
+  period: Sep 2025 – Present
+  note: 13.56 MHz wireless power transfer homecage for optogenetic implants, designed in Ansys HFSS.
+
+- role: Software Engineering Intern
+  org: AllPaid Inc.
+  where: Indianapolis, IN / Remote
+  period: Jun 2025 – Sep 2025
+  note: Internal API that detects long-running payment messages and escalates them to QA.
+
+- role: Electrical Engineer
+  org: Glorysky Electronics Co., Ltd.
+  where: Huizhou, China
+  period: Jul 2025 – Sep 2025
+  note: Schematic reviews, PCB design review and manufacturing handoff for consumer electronics.
+
+- role: Researcher
+  org: Computational Imaging Group, WashU
+  where: St. Louis, MO
+  period: Jan 2025 – Jun 2025
+  note: PyTorch 3D Attention U-Net for volumetric CT segmentation.
+
+- role: Electronics & Data Acquisition
+  org: WashU Racing (Formula SAE)
+  where: St. Louis, MO
+  period: Sep 2023 – Present
+  note: Control-board PCBs, Arduino C firmware, CAN/DBC telemetry and vehicle data analysis.

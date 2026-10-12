@@ -1,0 +1,11 @@
+{% assign proj = include.project %}
+<li class="card" data-tags="{{ proj.tags | join: '|' | downcase }}">
+  <a class="card-link" href="{{ proj.url | relative_url }}">
+    <div class="card-media">{% if proj.thumbnail %}<img src="{{ proj.thumbnail | relative_url }}" alt="{{ proj.thumbnail_alt | default: proj.title | escape }}" loading="lazy">{% endif %}</div>
+    <div class="card-body">
+      <h3 class="card-title">{{ proj.title }}</h3>
+      <p class="card-summary">{{ proj.card_summary | default: proj.summary }}</p>
+      <p class="card-meta">{{ proj.category }}{% if proj.period %} · {{ proj.period }}{% endif %}</p>
+    </div>
+  </a>
+</li>

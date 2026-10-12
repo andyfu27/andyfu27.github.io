@@ -1,0 +1,29 @@
+# ------------------------------------------------------------------
+# Your info. Anything left blank ("") is simply hidden on the site.
+# ------------------------------------------------------------------
+name: Siming (Andy) Fu
+short_name: Andy Fu
+headline: Electrical Engineering @ WashU
+tagline: Robotics, embedded hardware and RF systems, designed, simulated and tested.
+intro: >-
+  B.S. Electrical Engineering student at Washington University in St. Louis (Class of 2027).
+  My work spans ROS 2 robotics and computer vision, RF wireless power, deep learning for
+  medical imaging, and embedded electronics for Formula SAE.
+location: St. Louis, MO
+
+email: andy.f@wustl.edu
+github: ""          # your GitHub username, e.g. "andyfu"
+linkedin: ""        # full URL, e.g. "https://www.linkedin.com/in/your-name"
+resume: /assets/resume.pdf
+
+# Optional: a photo of you for the right side of the home page (e.g. /assets/img/me.jpg).
+# Leave blank to show your first project's video there instead.
+photo: ""
+
+# Shown as small labels under your intro
+focus:
+  - Robotics software
+  - Embedded systems
+  - PCB design
+  - RF / wireless power
+  - Computer vision & ML

@@ -1,0 +1,61 @@
+---
+layout: default
+---
+{% assign p = site.data.profile %}
+{% assign projects = site.projects | sort: "order" %}
+{% assign first = projects | first %}
+
+<section class="hero wrap">
+  <div class="hero-text">
+    <h1 class="hero-name">{{ p.name }}</h1>
+    <p class="hero-tagline">{{ p.tagline }}</p>
+    <p class="hero-intro">{{ p.intro }}</p>
+    {% include links.html %}
+  </div>
+  <div class="hero-media">
+    {% if p.photo != "" %}
+      <div class="hero-frame"><img src="{{ p.photo | relative_url }}" alt="{{ p.name }}"></div>
+    {% else %}
+      <a class="hero-frame" href="{{ first.url | relative_url }}" aria-label="Open {{ first.title }}">
+        {% if first.hero_video %}<video src="{{ first.hero_video | relative_url }}" poster="{{ first.hero | relative_url }}" autoplay muted loop playsinline aria-hidden="true"></video>
+        {% else %}<img src="{{ first.thumbnail | relative_url }}" alt="">{% endif %}
+      </a>
+      <p class="hero-caption muted">Recent: <a href="{{ first.url | relative_url }}">{{ first.title }}</a></p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section wrap" id="projects" aria-labelledby="projects-title">
+  <div class="section-head">
+    <h2 id="projects-title">Projects</h2>
+    {% assign all_tags = "" | split: "" %}
+    {% for proj in projects %}{% for t in proj.tags %}{% assign all_tags = all_tags | push: t %}{% endfor %}{% endfor %}
+    {% assign all_tags = all_tags | uniq %}
+    {% if projects.size > 6 %}
+    <div class="filters" role="group" aria-label="Filter projects by tag">
+      <button class="chip is-active" data-filter="all" aria-pressed="true">All</button>
+      {% for t in all_tags %}<button class="chip" data-filter="{{ t | downcase }}" aria-pressed="false">{{ t }}</button>{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  <ul class="cards">
+    {% for proj in projects %}{% include project-card.html project=proj %}{% endfor %}
+  </ul>
+  <p class="empty muted" hidden>No projects with that tag yet.</p>
+</section>
+
+<section class="section wrap" id="experience" aria-labelledby="exp-title">
+  <div class="section-head"><h2 id="exp-title">Experience</h2></div>
+  <ol class="timeline">
+    {% for e in site.data.experience %}
+    <li>
+      <p class="tl-period">{{ e.period }}</p>
+      <div>
+        <h3>{{ e.role }}</h3>
+        <p class="tl-org">{{ e.org }}{% if e.where %} <span class="muted">· {{ e.where }}</span>{% endif %}</p>
+        {% if e.note %}<p class="tl-note">{{ e.note }}</p>{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>

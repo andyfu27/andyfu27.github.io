@@ -1,0 +1,14 @@
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% if page.title and page.title != site.title %}{% assign page_title = page.title | append: " · " | append: site.data.profile.short_name %}{% else %}{% assign page_title = site.data.profile.name | append: " · Portfolio" %}{% endif %}
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ page.summary | default: site.description | strip_html | escape }}">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:description" content="{{ page.summary | default: site.description | strip_html | escape }}">
+{% if page.thumbnail %}<meta property="og:image" content="{{ page.thumbnail | absolute_url }}">{% endif %}
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="preload" href="{{ '/assets/fonts/inter-tight.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
